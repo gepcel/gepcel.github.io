@@ -1,0 +1,7 @@
+﻿Title: 极点五笔词库转换为精灵五笔和 fcitx 词库
+Date: 2016-12-05 11:51:22
+Tags:python, 五笔, 极点, fcitx
+Category:python
+Slug:2016-12-05-fcitx
+Auther:Way
+Summary: 以前一直用极点五笔输入法（我的最爱，最好用的五笔啊），但是最近因为操作系统的原因，开始尝试转向精灵五笔和 fcitx 五笔。因此有必要将极点五笔的词库转换为后两者，以便有更好的体验。

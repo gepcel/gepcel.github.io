@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block archclass %} class="active"{%endblock%}
+{% block title %}Archives - {{SITENAME}}{%endblock%}
+{% block contenttitle %}Keep Writing{% endblock%}
+{% block content %}
+
+<ul class="listing">
+    {% for year, date_year in dates|groupby( 'date.year' )|sort(reverse=True) %}  
+            <li class="listing-seperator">{{ year }}</li>
+            <ul class="archive-list">
+            {% for article in date_year %}
+                <li class="listing-item">{{article.locale_date}}  <a href="/{{ article.url }}">{{article.title}}</a></li>   
+            {% endfor %}
+     </ul>
+    {% endfor %}
+</ul>
+
+{% endblock %}

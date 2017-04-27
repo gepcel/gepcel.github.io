@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block archclass %} class="active"{%endblock%}
+{% block title %}Tags - {{SITENAME}}{%endblock%}
+{% block contenttitle %}Tags{%endblock%}
+{% block content %}
+
+<div class="tag_cloud">
+    {% for tag, articles in tags %}
+    {% set num = articles|count%}    <a href="/tags.html#{{ tag }}">{{ tag }}<span>{{ num }}</span></a>
+    {% endfor %}
+</div>
+<ul class="listing">
+{% for tag, articles in tags %}
+<li class="listing-seperator" id="{{ tag }}">{{tag}}</li>
+{% for article in articles %}
+<li class="listing-item">{{article.locale_date}}  <a href="/{{ article.url }}">{{article.title}}</a></li>
+{% endfor %}
+{% endfor %}
+</ul>
+{% endblock %}
+
