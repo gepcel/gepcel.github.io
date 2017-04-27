@@ -8,11 +8,11 @@ OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
-GITHUB_REPO_SLUG=gepcel/gepcel.github.io  
-GITHUB_REMOTE_NAME=origin  
-GITHUB_PAGES_BRANCH=master  
+GITHUB_REPO_SLUG=gepcel/gepcel.github.io
+GITHUB_REMOTE_NAME=origin
+GITHUB_PAGES_BRANCH=master
 # 以上參數請根據需求自行替換  
-GITHUB_COMMIT_MSG=$(shell git --no-pager log --format=%s -n 1)  
+GITHUB_COMMIT_MSG=$(shell git --no-pager log --format=%s -n 1)
 
 FTP_HOST=localhost
 FTP_USER=anonymous
