@@ -110,7 +110,7 @@ cf_upload: publish
 github: publish
 	ghp-import $(OUTPUTDIR)
 	git push blog gh-pages
-travis: publish  
+travis: publish
     git config --global user.name "gepcel - Travis"  
     git config --global user.email gepcelway@gmail.com  
 
