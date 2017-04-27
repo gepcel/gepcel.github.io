@@ -5,7 +5,7 @@ branches:
   - blog
 
 install:
-- pip install -r requirements.txt
+- pip install -r requirments.txt
 
 script:
 - make travis
