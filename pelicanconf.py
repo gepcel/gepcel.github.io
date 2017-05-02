@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'WANG Aiyong'
-SITENAME = u'WANG Aiyong blog'
+SITENAME = u"WANG Aiyong's blog"
 SITEURL = 'http://gepcel.github.io'
 
 MARKUP = ('md', 'ipynb')
