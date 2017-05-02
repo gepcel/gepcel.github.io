@@ -51,7 +51,7 @@ ARTICLE_SAVE_AS = 'posts/{date:%Y}-{date:%m}-{date:%d}-{slug}.html'
 #---------config or pelican-plugins--------
 PLUGIN_PATHS=["pelican-plugins"]
 PLUGINS=['interlinks','render_math', 'liquid_tags.img', 'liquid_tags.video', 
-'liquid_tags.youtube', 'liquid_tags.vimeo', 'liquid_tags.include_code',  'liquid_tags.notebook', 'liquid_tags.literal', 'ipynb.markup']
+'liquid_tags.youtube', 'liquid_tags.vimeo', 'liquid_tags.include_code', 'liquid_tags.literal', 'ipynb.markup']
 
 #-------config of plugin: interlinks-------
 #interlinks used
@@ -75,6 +75,8 @@ INTERLINKS = {
 #in some specific article with a "Latex:" metadata without anyvalue
 LATEX = 'article'
 
-EXTRA_HEADER = open('_nb_header.html').read() #.decode('utf-8')
+# EXTRA_HEADER = open('_nb_header.html').read() #.decode('utf-8')
 NOTEBOOK_DIR = 'notebooks'
 STATIC_PATHS = ['images', 'code', 'notebooks']
+
+IGNORE_FILES = ['.ipynb_checkpoints', '*.tmp']

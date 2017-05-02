@@ -58,7 +58,7 @@ class IPythonNB(BaseReader):
             _content, metadata = md_reader.read(metadata_filepath)
         else:
             # Load metadata from ipython notebook file
-            ipynb_file = open(filepath)
+            ipynb_file = open(filepath, encoding='utf8')
             notebook_metadata = json.load(ipynb_file)['metadata']
 
             # Change to standard pelican metadata

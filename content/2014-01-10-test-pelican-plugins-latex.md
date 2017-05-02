@@ -4,9 +4,8 @@ Tags: pelican, pelican-plugins, latex, mathjax
 Category: pelican
 Slug: test-pelican-plugins-mathjax
 Auther: gepcel
-Latex:
 
-this a test for latex plugin of pelican
+This a test for latex plugin of pelican
 
 now is an inline math equations $ y = x^2 $
 
