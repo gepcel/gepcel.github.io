@@ -9,3 +9,5 @@ There are 2 branches, `blog` for the source content and configs of the webpage, 
 For a new computer, set up python and pelican, clone the `blog` branch, edit and push it.
 
 `git clone git@github.com:gepcel/gepcel.github.io.git --branch blog --single-branch`
+
+ok, this line is a test.
