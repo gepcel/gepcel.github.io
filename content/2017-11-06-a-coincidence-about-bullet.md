@@ -1,5 +1,5 @@
 Title: 头条：朝天开枪，子弹会掉下来伤到人吗
-Date: 2017-05-02 15:36:50
+Date: 2017-11-06 15:36:50
 Tags: fun
 Category: life, news
 Slug: an-coincidence-about-bullet
