@@ -4,11 +4,12 @@
 * @author linghua.zhang@me.com
 * @link http://lhzhang.com/
 * @update 2011-12-20
-* 
+*
 * |/ | (~ (~
 * |\.|._)._)
 * --------------------------------- */
 /*
+@import url(http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400)
 @import url(http://fonts.googleapis.com/css?family=PT+Serif);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans);
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web);
@@ -16,7 +17,7 @@
 @import url(http://fonts.googleapis.com/css?family=Electrolize);
 @import url(http://fonts.googleapis.com/css?family=Cuprum);
 */
-body{font-size:110%; font-family: 'Alegreya', 'Palatino Linotype', 'Book Antiqua', Palatino, 'source-han-serif-sc', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif TC', 'Source Han Serif TW', 'Source Han Serif', 'Songti SC', '仿宋', 'FangSong', 'NSimSun', 'Microsoft YaHei', serif; color:#000000;background-color:#ffffff;}
+body{font-size:100%; font-family: 'Merriweather', 'Alegreya', 'Palatino Linotype', 'Book Antiqua', Palatino, 'source-han-serif-sc', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif TC', 'Source Han Serif TW', 'Source Han Serif', 'Songti SC', '仿宋', 'FangSong', 'NSimSun', 'Microsoft YaHei', serif; color:#000000;background-color:#ffffff;}
 *{padding:0;margin: 0;border:none;outline:none;}
 a{color:#dd0000;text-decoration:none;}
 a:hover{color:#333333;text-decoration:underline;}
