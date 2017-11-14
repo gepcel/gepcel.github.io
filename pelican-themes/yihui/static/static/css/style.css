@@ -60,7 +60,7 @@ blockquote p{margin:0;padding:.5em 0;}
 .listing-seperator{font-weight:bold;}
 .meta{text-align:right;font-size:12px;}
 header{padding:.5em 0;border-bottom: 1px solid #cccccc;}
-nav{font-family:Arial, "Helvetica Neue", Helvetica, "Microsoft YaHei", sans-serif;font-size:1em;text-transform:uppercase;float:left;margin-left:-8em;width:9em;text-align:right;}
+nav{font-family:Arial, "Helvetica Neue", Helvetica, "Microsoft YaHei", sans-serif;font-size:1em;text-transform:uppercase;float:left;margin-left:-10em;width:9em;text-align:right;}
 nav a{display:block;padding:.4em 1em;color:#dd0000;}
 nav a:hover{background-color:#ff0000;text-decoration:none;color:#f9f9f9;-webkit-transition:color .2s linear;}
 .post{padding:.5em 0em;}
