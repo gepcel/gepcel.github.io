@@ -1,0 +1,124 @@
+/*------------------------------------
+* sext
+*
+* @author linghua.zhang@me.com
+* @link http://lhzhang.com/
+* @update 2011-12-20
+*
+* |/ | (~ (~
+* |\.|._)._)
+* --------------------------------- */
+/*
+@import url(http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400)
+@import url(http://fonts.googleapis.com/css?family=PT+Serif);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans);
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web);
+@import url(http://fonts.googleapis.com/css?family=Galdeano);
+@import url(http://fonts.googleapis.com/css?family=Electrolize);
+@import url(http://fonts.googleapis.com/css?family=Cuprum);
+*/
+body{font-size:100%; font-family: 'Merriweather', 'Alegreya', 'Palatino Linotype', 'Book Antiqua', Palatino, 'source-han-serif-sc', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif TC', 'Source Han Serif TW', 'Source Han Serif', 'Songti SC', '仿宋', 'FangSong', 'NSimSun', 'Microsoft YaHei', serif; color:#000000;background-color:#ffffff;}
+*{padding:0;margin: 0;border:none;outline:none;}
+a{color:#dd0000;text-decoration:none;}
+a:hover{color:#333333;text-decoration:underline;}
+hr{margin:.7em 0;border-top:1px dashed #d0d0d0;border-bottom:1px dashed #f9f9f9;}
+p{padding:.5em 0;}
+li{padding:.2em 0;}
+ol,ul{list-style-position:inside;}
+ol ul, ul ol, ul ul, ol ol {margin-left:1em;}
+pre {border: 1px solid #ccc;}
+pre code{margin:1em 0;display:block;overflow:auto;}
+pre, code{font-size: 100%, font-family:Menlo,"Andale Mono",Consolas,"Courier New",Monaco,monospace;margin-top:1em;margin-bottom:1em;background-color: #F7F7F7;padding-left:3px;padding-right:3px;}
+
+pre, code{
+white-space: pre-wrap;
+white-space: -moz-pre-wrap;
+white-space:-pre-wrap;
+white-space:-o-pre-wrap;
+word-wrap: break-word;
+}
+
+/* code{border-left: 5px solid #0e94ec;padding-left:4px;} */
+blockquote{display:block;text-align:justify;border-left:4px solid #0e94ec;background-color: #F7F7F7;}
+blockquote{margin:1em 0em;padding: 0em 1.5em;}
+blockquote p{margin:0;padding:.5em 0;}
+#container{width:720px;margin:2em auto;display:block;padding:0 2em;}
+.content{line-height:1.7em;}
+.content h1{padding:.5em 0;}
+.content h2{padding:.4em 0;}
+.content h3{padding:.4em 0;}
+.content h4{padding:.3em 0;}
+.content h5{padding:.3em 0;}
+.content h6{padding:.2em 0;}
+.content h7{padding:.2em 0;}
+.content img{max-width:700px;display:block;margin:4px auto;-webkit-box-shadow:#999 1px 1px 4px;-moz-box-shadow:#999 1px 1px 4px;box-shadow:#999 1px 1px 4px;}
+#tag_cloud{margin-bottom: 1em;}
+#tag_cloud a:hover{color:#333333 !important;text-decoration:none;}
+.listing-item,.listing-seperator{list-style-type:none;}
+.listing-item a{padding:.2em 1em;}
+.listing-item time{color:#999999;}
+.listing-seperator{font-weight:bold;}
+.meta{text-align:right;font-size:12px;}
+header{padding:.5em 0;border-bottom: 1px solid #cccccc;}
+nav{font-family:Arial, "Helvetica Neue", Helvetica, "Microsoft YaHei", sans-serif;font-size:1em;text-transform:uppercase;float:left;margin-left:-10em;width:9em;text-align:right;}
+nav a{display:block;padding:.4em 1em;color:#dd0000;}
+nav a:hover{background-color:#ff0000;text-decoration:none;color:#f9f9f9;-webkit-transition:color .2s linear;}
+.post{padding:.5em 0em;}
+h1,h2,h3,h4,h5,h6,h7{font-family:"Titillium Web", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;}
+h1{font-size:1.6em;color:#000;}
+h2{font-size:1.4em;color:#111;}
+h3{font-size:1.2em;color:#222;}
+h4{font-size:1em;color:#333;}
+embed,object,iframe{display:block;margin:4px auto;}
+.gist{font-size: 12px;line-height:1.6;}
+
+ul.tagcloud {
+  list-style: none;
+    padding: 0;
+}
+
+ul.tagcloud li {
+    display: inline-block;
+}
+
+li.tag-0 {
+    font-size: 150%;
+}
+
+li.tag-1 {
+    font-size: 120%;
+}
+
+.tag_cloud {
+    list-style:none;
+    margin:0;
+    padding:5px 0 ;
+    overflow:hidden;
+}
+
+.tag_cloud li {
+    line-height:28px;
+    float:left;
+    margin:0px;
+}
+
+.tag_cloud a {
+    padding: 3px 6px;
+    margin: 2px;
+    border-radius: 3px;
+    text-decoration:none;
+}
+
+.tag_cloud a span {
+    vertical-align: super;
+    font-size: 0.8em;
+}
+
+.tag_cloud li {
+    line-height:28px;
+    float:none;
+}
+
+.post-content .post-message p:last-child{
+    font-family:"Galdeano","Hiragino Sans GB","Microsoft YaHei",Trebuchet,"Trebuchet MS",Tahoma,"Lucida Grande","Lucida Sans Unicode",Verdana,sans-serif;
+}

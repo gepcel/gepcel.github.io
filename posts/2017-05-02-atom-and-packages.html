@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atom 使用及插件安装</title>
+        <meta charset="utf-8" />
+        <link href="/theme/static/css/style.css" rel="stylesheet" />
+        <link href="/theme/static/css/highlight.css" rel="stylesheet" />
+        <link href="/theme/static/css/pygment.css" rel="stylesheet" />
+        <link href="/images/favicon.ico" rel = "Shortcut Icon" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="gepcel.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="WANG Aiyong's blog Full Atom Feed" />
+        <link href="gepcel.github.io/feeds/tools.atom.xml" type="application/atom+xml" rel="alternate" title="WANG Aiyong's blog Categories Atom Feed" />
+
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="main" role="main">
+		<header><h1>Atom 使用及插件安装</h1></header>
+		<nav>
+			<span><a title="home page" class="" href="/index.html">home</a></span>
+       			<span><a title="about" class="" href="/pages/about.html">about</a></span>
+		        <span><a title="guestbook" class="" href="/pages/guestbook.html">guestbook</a></span>
+			<span><a title="publication" class="" href="/pages/publication.html">publication</a></span>
+		        <span><a title="vitae" class="" href="/pages/vitae.html">vitae</a></span>
+		        <span><a title="categories" class="" href="/categories.html">categories</a></span>
+		        <span><a title="tags" class="" href="/tags.html">tags</a></span>
+		        <span><a title="links" class="" href="/pages/links">links</a></span>
+		        <span><a title="subscribe by RSS" class="" href="/feeds/all.atom.xml">subscribe</a></span>
+		</nav>
+		<artical class="content">
+<section class="post">
+<h1>文本编辑器之路</h1>
+<p>最近一直试玩一个神器 -- <a href="https://atom.io">Atom</a>。据说这个是 <code>github</code> 运用了当前最先进、流行的技术倾力打造的，被称为“属于21世纪”的，免费并且开源的，文本（代码）编辑利器。配合几个插件，功能确实很惊艳。但<strong>缺点是速度比较慢，吃CPU</strong>。</p>
+<p>在此之前，接触了一段时间的 <a href="http://www.sublimetext.com/">Sublime Text</a>，在其官方网站最开始的位置，以 gif 动画的形式展示了几个拿手功能，当年就是被这个一下子吸引的。但是这货好像已经不怎么更新了，虽然流行且插件也蛮丰富，但却是收费软件。Atom 的操作方式跟 Sublime Text 非常接近，转换的成本并不高。Sublime Text <strong>优点是速度很快，稳定</strong>。</p>
+<p>在此之前，电脑里一直装有 notepad++，现在也有，作为一些文件的快速打开查看，主要是替代系统默认的记事本，快速查看一下文件用。基本不用来编辑文本。</p>
+<h1>插件安装</h1>
+<p>Atom 的安装使用就不说了，其网站上介绍蛮详细的。但是插件安装却很让人头疼，用代理也不总是能装的上。网上找到以下方法（命令行输入）：</p>
+<div class="highlight"><pre><span></span>npm config set registry https://registry.npm.taobao.org
+apm config set registry https://registry.npm.taobao.org
+</pre></div>
+<h1>推荐几个插件</h1>
+<h2>1. <a href="https://nteract.io/atom">hydrogen</a></h2>
+<p>Jupyter notebook 一直是日常数据分析中最主要的工作，有很多优点。但其工作流程总是让人觉得不是很方便。如果并不想图文并茂地保存并分享工作过程和成果，只是快速地处理一些数据，得到几个图或者一个结果的话，hydrogen 应该更好用。最近正在体验</p>
+<h2>2. <a href="https://github.com/shd101wyy/markdown-preview-enhanced">markdown-preview-enhanced</a></h2>
+<p>能在编辑 markdown 的同时预览效果，并且能执行代码块，并将代码的输出结果以类似 <code>notebook</code> 的 <code>inline</code> 的形式插入预览文件中，最后直接保存为 pdf。
+附一张插件网站上的演示图：
+<img src="../images/code-chunk-demo-of-markdown-preview-enhanced.gif"/></p>
+<h2>3. <a href="https://atom.io/packages/minimap">minimap</a></h2>
+<p>实现一个类似 Sublime Text 效果，用处不大。</p>
+<h2>4. <a href="https://atom.io/packages/vim-mode-plus">vim-mode-plus</a></h2>
+<p>vim 爱好者的福音。一直想搞但搞不定 vim。</p>  
+</section> 
+<section class="meta">
+	<span class="auther"><a href="gepcel.github.io">WANG Aiyong</a></span>
+	<span class="time">/2017-05-02</span>
+	<br/>
+	<span class="license">Power by <a href="http://getpelican.com/">Pelican</a> in categories  <a href="/category/tools.html">tools</a> Tagged <a href="/tag/atom.html">atom </a><a href="/tag/proxy.html">proxy </a><a href="/tag/apm.html">apm </a><a href="/tag/npm.html">npm </a></span>
+</section><!-- /#meta -->
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gepcel'; // required: replace example with your forum shortname
+    var disqus_url = 'gepcel.github.io/posts/posts/2017-05-02-atom-and-packages.html';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+		</artical>
+	   </div>
+       </div>
+
+    </body>
+</html>

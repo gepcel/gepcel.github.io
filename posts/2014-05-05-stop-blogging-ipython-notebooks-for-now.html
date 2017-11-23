@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>pelican 中集成 notebook 博客貌似不是个好主意</title>
+        <meta charset="utf-8" />
+        <link href="/theme/static/css/style.css" rel="stylesheet" />
+        <link href="/theme/static/css/highlight.css" rel="stylesheet" />
+        <link href="/theme/static/css/pygment.css" rel="stylesheet" />
+        <link href="/images/favicon.ico" rel = "Shortcut Icon" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="gepcel.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="WANG Aiyong's blog Full Atom Feed" />
+        <link href="gepcel.github.io/feeds/python.atom.xml" type="application/atom+xml" rel="alternate" title="WANG Aiyong's blog Categories Atom Feed" />
+
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="main" role="main">
+		<header><h1>pelican 中集成 notebook 博客貌似不是个好主意</h1></header>
+		<nav>
+			<span><a title="home page" class="" href="/index.html">home</a></span>
+       			<span><a title="about" class="" href="/pages/about.html">about</a></span>
+		        <span><a title="guestbook" class="" href="/pages/guestbook.html">guestbook</a></span>
+			<span><a title="publication" class="" href="/pages/publication.html">publication</a></span>
+		        <span><a title="vitae" class="" href="/pages/vitae.html">vitae</a></span>
+		        <span><a title="categories" class="" href="/categories.html">categories</a></span>
+		        <span><a title="tags" class="" href="/tags.html">tags</a></span>
+		        <span><a title="links" class="" href="/pages/links">links</a></span>
+		        <span><a title="subscribe by RSS" class="" href="/feeds/all.atom.xml">subscribe</a></span>
+		</nav>
+		<artical class="content">
+<section class="post">
+<h1>pelican 中发布 notebook 博客的方法</h1>
+<h3>方法一： ipythonnb</h3>
+<p><a href="http://danielfrg.com/pages/about.html">Daniel Rodriguez</a>制作了一个 pelican 插件 <a href="https://github.com/danielfrg/pelican-ipythonnb">ipythonnb</a>，可以直接将整个 .ipynb 文件当作一篇博客内容进行发布。这个其实是个不错的主意，运行效果也不错，经过小的修改，css 之间冲突也比较小。而且这个也比较符合 notebook 的使用方法：整篇文章在 notebook 中完成。</p>
+<h3>方法二：liquid-tags</h3>
+<p>用 pelican 的 <a href="https://github.com/jakevdp/pelican-plugins/tree/liquid_tags/liquid_tags">liquid-tags</a> 插件，这个也不错。其宗旨是在 .md 文件中像正常写 pelican 一样写博客，而博客中可以插入 .ipynb 文件，而且可以以 </p>
+<div class="highlight"><pre><span></span>{% notebook path/to/notebook.ipynb [cells[i:j]] %}
+</pre></div>
+<p>的形式插入指定的行。保持了博客内容的独立和简洁。</p>
+<h1>问题</h1>
+<p>这两种方法都存在一个问题是 notebook 的样式问题，每种方法都要费好大的心思去调整 notebook 的样式和原本的样式之间的冲突。而在 ipython 升级之后，可能又要重新调整……</p>
+<p>在努力的尝试之后，暂时还是放弃吧，不得不佩服前端设计人员，需要巨大的耐心啊！我等焦躁之人还是等等看有没有高手弄出一个成熟的解决方案吧。感觉 notebook 的样式设计的很糟糕，独自运行的时候没有问题，但是一涉及到整合的时候，各种冲突……</p>  
+</section> 
+<section class="meta">
+	<span class="auther"><a href="gepcel.github.io">WANG Aiyong</a></span>
+	<span class="time">/2014-05-05</span>
+	<br/>
+	<span class="license">Power by <a href="http://getpelican.com/">Pelican</a> in categories  <a href="/category/python.html">python</a> Tagged <a href="/tag/ipython-notebook-pelican-blog.html">ipython notebook pelican blog </a></span>
+</section><!-- /#meta -->
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gepcel'; // required: replace example with your forum shortname
+    var disqus_url = 'gepcel.github.io/posts/posts/2014-05-05-stop-blogging-ipython-notebooks-for-now.html';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+		</artical>
+	   </div>
+       </div>
+
+    </body>
+</html>

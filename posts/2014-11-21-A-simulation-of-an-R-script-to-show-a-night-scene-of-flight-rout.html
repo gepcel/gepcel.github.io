@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>A simulation of an R script to show a night-scene of flight route</title>
+        <meta charset="utf-8" />
+        <link href="/theme/static/css/style.css" rel="stylesheet" />
+        <link href="/theme/static/css/highlight.css" rel="stylesheet" />
+        <link href="/theme/static/css/pygment.css" rel="stylesheet" />
+        <link href="/images/favicon.ico" rel = "Shortcut Icon" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="gepcel.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="WANG Aiyong's blog Full Atom Feed" />
+        <link href="gepcel.github.io/feeds/python.atom.xml" type="application/atom+xml" rel="alternate" title="WANG Aiyong's blog Categories Atom Feed" />
+
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="main" role="main">
+		<header><h1>A simulation of an R script to show a night-scene of flight route</h1></header>
+		<nav>
+			<span><a title="home page" class="" href="/index.html">home</a></span>
+       			<span><a title="about" class="" href="/pages/about.html">about</a></span>
+		        <span><a title="guestbook" class="" href="/pages/guestbook.html">guestbook</a></span>
+			<span><a title="publication" class="" href="/pages/publication.html">publication</a></span>
+		        <span><a title="vitae" class="" href="/pages/vitae.html">vitae</a></span>
+		        <span><a title="categories" class="" href="/categories.html">categories</a></span>
+		        <span><a title="tags" class="" href="/tags.html">tags</a></span>
+		        <span><a title="links" class="" href="/pages/links">links</a></span>
+		        <span><a title="subscribe by RSS" class="" href="/feeds/all.atom.xml">subscribe</a></span>
+		</nav>
+		<artical class="content">
+<section class="post">
+<p>李根 published a wonderful <a href="http://cos.name/2014/09/visualizing-flights-data/">article</a> on <a href="cos.name">cos.name</a>, with an R script drawing a beautiful pic of a flight route night-scene world map. You can check his post on <a href="">http://cos.name/2014/09/visualizing-flights-data/</a>.</p>
+<p>I've been learning and using <a href="http://python.org">python</a>, <a href="http://python.org">matplotlib</a>, <a href="http://python.org">pandas</a> in my reasearch work for almost a year. Recently I'm trying using <a href="http://scitools.org.uk/cartopy/index.html">cartopy</a> to draw some simple distribution map. Naturally I wondered how to simulate it in python. So I wrote a python script as following.</p>
+<p>Do note that this is only a partial simulation, not all. Partly because I do not actually know R.</p>
+<p>{#% notebook simulation-of-an-R-script-drawing-a-night-scene-map.ipynb %}</p>
+<p>The liquid-notebook plugin doesn't work after an upgrade of ipython. So I'll just paste the code and the result here.</p>
+<div class="highlight"><pre><span></span><span class="c1"># coding: utf-8</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="kn">as</span> <span class="nn">ccrs</span>
+<span class="kn">from</span> <span class="nn">cartopy.io.shapereader</span> <span class="kn">import</span> <span class="n">Reader</span>
+
+<span class="c1">#load the airports data</span>
+<span class="n">airports</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'airports.dat'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+                       <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">,</span> <span class="s1">'city'</span><span class="p">,</span> <span class="s1">'country'</span><span class="p">,</span> <span class="s1">'faa'</span><span class="p">,</span> <span class="s1">'icao'</span><span class="p">,</span> 
+                              <span class="s1">'lat'</span><span class="p">,</span> <span class="s1">'lon'</span><span class="p">,</span> <span class="s1">'alt'</span><span class="p">,</span> <span class="s1">'tz'</span><span class="p">,</span> <span class="s1">'dst'</span><span class="p">])</span>
+<span class="n">china_airports</span> <span class="o">=</span> <span class="n">airports</span><span class="p">[</span><span class="n">airports</span><span class="p">[</span><span class="s1">'country'</span><span class="p">]</span><span class="o">==</span><span class="s1">'China'</span><span class="p">]</span>
+
+<span class="c1">#load the airlines data</span>
+<span class="n">airlines</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'airlines.dat'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+                       <span class="n">na_values</span><span class="o">=</span><span class="s1">'</span><span class="se">\\</span><span class="s1">N'</span><span class="p">,</span> 
+                       <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'name'</span><span class="p">,</span> <span class="s1">'alias'</span><span class="p">,</span> <span class="s1">'iata'</span><span class="p">,</span> <span class="s1">'icao'</span><span class="p">,</span> <span class="s1">'callsign'</span><span class="p">,</span> 
+                              <span class="s1">'country'</span><span class="p">,</span> <span class="s1">'active'</span><span class="p">])</span>
+
+<span class="c1">#load the routes data</span>
+
+<span class="n">routes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'routes.dat'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">','</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+                     <span class="n">na_values</span><span class="o">=</span><span class="s1">'</span><span class="se">\\</span><span class="s1">N'</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">'airline'</span><span class="p">,</span> <span class="s1">'airlineid'</span><span class="p">,</span> <span class="s1">'s-port'</span><span class="p">,</span> 
+                                             <span class="s1">'s-port-id'</span><span class="p">,</span> <span class="s1">'d-port'</span><span class="p">,</span> 
+                           <span class="s1">'d-port-id'</span><span class="p">,</span> <span class="s1">'codeshare'</span><span class="p">,</span> <span class="s1">'stops'</span><span class="p">,</span> <span class="s1">'equipment'</span><span class="p">])</span>
+<span class="n">freq</span> <span class="o">=</span> <span class="n">routes</span><span class="p">[</span><span class="s1">'d-port'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<span class="n">freq</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="s1">'freq'</span>
+<span class="n">airports</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'faa'</span><span class="p">)</span>
+
+<span class="n">r_2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">routes</span><span class="p">,</span> <span class="n">airports</span><span class="p">[[</span><span class="s1">'faa'</span><span class="p">,</span> <span class="s1">'lon'</span><span class="p">,</span> <span class="s1">'lat'</span><span class="p">,</span> <span class="s1">'country'</span><span class="p">]],</span> 
+               <span class="n">left_on</span><span class="o">=</span><span class="s1">'s-port'</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">'faa'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+<span class="n">r_3</span> <span class="o">=</span> <span class="n">r_2</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'lon'</span><span class="p">:</span> <span class="s1">'slon'</span><span class="p">,</span> <span class="s1">'lat'</span><span class="p">:</span> <span class="s1">'slat'</span><span class="p">})</span>
+
+<span class="n">r_4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">r_3</span><span class="p">,</span> <span class="n">airports</span><span class="p">[[</span><span class="s1">'faa'</span><span class="p">,</span> <span class="s1">'lon'</span><span class="p">,</span> <span class="s1">'lat'</span><span class="p">,</span> <span class="s1">'country'</span><span class="p">]],</span> 
+               <span class="n">left_on</span><span class="o">=</span><span class="s1">'d-port'</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">'faa'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'left'</span><span class="p">)</span>
+<span class="n">r_5</span> <span class="o">=</span> <span class="n">r_4</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'lon'</span><span class="p">:</span> <span class="s1">'dlon'</span><span class="p">,</span> <span class="s1">'lat'</span><span class="p">:</span> <span class="s1">'dlat'</span><span class="p">})</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">r_5</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">'airlineid'</span><span class="p">,</span> <span class="s1">'s-port-id'</span><span class="p">,</span> <span class="s1">'d-port-id'</span><span class="p">,</span> <span class="s1">'codeshare'</span><span class="p">,</span> 
+                <span class="s1">'stops'</span><span class="p">,</span> <span class="s1">'equipment'</span><span class="p">,</span> <span class="s1">'faa_x'</span><span class="p">,</span> <span class="s1">'faa_y'</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="s1">'columns'</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="p">[(</span><span class="n">r</span><span class="p">[</span><span class="s1">'country_x'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'China'</span><span class="p">)]</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">'rows'</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">'any'</span><span class="p">)</span>
+
+<span class="c1"># draw a map</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(</span><span class="n">central_longitude</span><span class="o">=</span><span class="mi">115</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">([</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">])</span>
+
+<span class="c1"># base map</span>
+<span class="n">f</span> <span class="o">=</span> <span class="s1">'110m_cultural/ne_110m_admin_0_countries.shp'</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">(</span><span class="n">Reader</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">geometries</span><span class="p">(),</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span> 
+                  <span class="n">facecolor</span><span class="o">=</span><span class="s1">'b'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">background_patch</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">'#000022'</span><span class="p">)</span>
+
+<span class="c1"># urban</span>
+<span class="n">urbanfile</span> <span class="o">=</span> <span class="s1">'50m_cultural/ne_50m_urban_areas.shp'</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_geometries</span><span class="p">(</span><span class="n">Reader</span><span class="p">(</span><span class="n">urbanfile</span><span class="p">)</span><span class="o">.</span><span class="n">geometries</span><span class="p">(),</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">(),</span> 
+                  <span class="n">color</span><span class="o">=</span><span class="s1">'w'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">r</span><span class="p">[</span><span class="s1">'slon'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="s1">'dlon'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">],</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="s1">'slat'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">r</span><span class="p">[</span><span class="s1">'dlat'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">],</span> 
+        <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Geodetic</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">'w'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+<p><img src="../images/flight-night-scene-with-blue-facecolor.png" width="700"/></p>
+<p>There is a weird issue. After upgrading some packages, the same script in a second notebook shows a different map as folloing:</p>
+<p><img src="../images/flight-night-scene-without-blue-facecolor.png" width="700"/></p>  
+</section> 
+<section class="meta">
+	<span class="auther"><a href="gepcel.github.io">WANG Aiyong</a></span>
+	<span class="time">/2014-11-21</span>
+	<br/>
+	<span class="license">Power by <a href="http://getpelican.com/">Pelican</a> in categories  <a href="/category/python.html">python</a> Tagged <a href="/tag/python.html">python </a><a href="/tag/cartopy.html">cartopy </a><a href="/tag/pandas.html">pandas </a><a href="/tag/r.html">R </a><a href="/tag/matplotlib.html">matplotlib </a></span>
+</section><!-- /#meta -->
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gepcel'; // required: replace example with your forum shortname
+    var disqus_url = 'gepcel.github.io/posts/posts/2014-11-21-A-simulation-of-an-R-script-to-show-a-night-scene-of-flight-rout.html';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+		</artical>
+	   </div>
+       </div>
+
+    </body>
+</html>

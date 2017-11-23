@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>WANG Aiyong's blog - pelican</title><link href="gepcel.github.io/" rel="alternate"></link><link href="gepcel.github.io/feeds/pelican.atom.xml" rel="self"></link><id>gepcel.github.io/</id><updated>2014-05-04T00:00:00+08:00</updated><entry><title>test a liquid-tag notebook</title><link href="gepcel.github.io/posts/2014-05-04-2014-05-04-test-a-liquid-tag-plugin.html" rel="alternate"></link><published>2014-05-04T00:00:00+08:00</published><updated>2014-05-04T00:00:00+08:00</updated><author><name>WANG Aiyong</name></author><id>tag:None,2014-05-04:gepcel.github.io/posts/2014-05-04-2014-05-04-test-a-liquid-tag-plugin.html</id><summary type="html">&lt;p&gt;liquid-tag&lt;/p&gt;</summary><content type="html">&lt;p&gt;this is a test of liquid-tag plugin&lt;/p&gt;
+&lt;p&gt;&lt;span class="videobox"&gt;
+&lt;iframe allowfullscreen="" frameborder="0" height="390" mozallowfullscreen="" src="https://www.youtube.com/embed/JNNAOypc6Ek" webkitallowfullscreen="" width="640"&gt;
+&lt;/iframe&gt;
+&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;{% notebook Python.ipynb %}
+end of blog&lt;/p&gt;</content><category term="python ipython notebook pelican blog"></category></entry><entry><title>测试 latex 插件</title><link href="gepcel.github.io/posts/2014-01-10-test-pelican-plugins-mathjax.html" rel="alternate"></link><published>2014-01-10T10:32:00+08:00</published><updated>2014-01-10T10:32:00+08:00</updated><author><name>WANG Aiyong</name></author><id>tag:None,2014-01-10:gepcel.github.io/posts/2014-01-10-test-pelican-plugins-mathjax.html</id><summary type="html">&lt;p&gt;This a test for latex plugin of pelican&lt;/p&gt;
+&lt;p&gt;now is an inline math equations $ y = x^2 $&lt;/p&gt;
+&lt;p&gt;and a display math:&lt;/p&gt;
+&lt;div class="math"&gt;$$ y = x^2 $$&lt;/div&gt;
+&lt;p&gt;and another type: &lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation} y=x^2 \end{equation}&lt;/div&gt;
+&lt;div class="math"&gt;\begin{equation} \label{second} y=x^2 \end{equation}&lt;/div&gt;
+&lt;p&gt;now ref to the second  as second …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This a test for latex plugin of pelican&lt;/p&gt;
+&lt;p&gt;now is an inline math equations $ y = x^2 $&lt;/p&gt;
+&lt;p&gt;and a display math:&lt;/p&gt;
+&lt;div class="math"&gt;$$ y = x^2 $$&lt;/div&gt;
+&lt;p&gt;and another type: &lt;/p&gt;
+&lt;div class="math"&gt;\begin{equation} y=x^2 \end{equation}&lt;/div&gt;
+&lt;div class="math"&gt;\begin{equation} \label{second} y=x^2 \end{equation}&lt;/div&gt;
+&lt;p&gt;now ref to the second  as second $ \ref{second} $&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="pelican"></category><category term="pelican-plugins"></category><category term="latex"></category><category term="mathjax"></category></entry><entry><title>测试 interlinks 插件</title><link href="gepcel.github.io/posts/2014-01-10-test-pelican-plugins-interlinks.html" rel="alternate"></link><published>2014-01-10T09:37:00+08:00</published><updated>2014-01-10T09:37:00+08:00</updated><author><name>WANG Aiyong</name></author><id>tag:None,2014-01-10:gepcel.github.io/posts/2014-01-10-test-pelican-plugins-interlinks.html</id><summary type="html">&lt;p&gt;first link is all in lower case &lt;a href="http://python.org"&gt;python&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;second link is all in upper case &lt;a href="Python&amp;gt;"&gt;PYTHON&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;first link is all in lower case &lt;a href="http://python.org"&gt;python&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;second link is all in upper case &lt;a href="Python&amp;gt;"&gt;PYTHON&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="pelican"></category><category term="pelican-plugins"></category></entry></feed>

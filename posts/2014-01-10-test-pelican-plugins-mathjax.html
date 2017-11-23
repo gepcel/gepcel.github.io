@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>测试 latex 插件</title>
+        <meta charset="utf-8" />
+        <link href="/theme/static/css/style.css" rel="stylesheet" />
+        <link href="/theme/static/css/highlight.css" rel="stylesheet" />
+        <link href="/theme/static/css/pygment.css" rel="stylesheet" />
+        <link href="/images/favicon.ico" rel = "Shortcut Icon" />
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link href="gepcel.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="WANG Aiyong's blog Full Atom Feed" />
+        <link href="gepcel.github.io/feeds/pelican.atom.xml" type="application/atom+xml" rel="alternate" title="WANG Aiyong's blog Categories Atom Feed" />
+
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="main" role="main">
+		<header><h1>测试 latex 插件</h1></header>
+		<nav>
+			<span><a title="home page" class="" href="/index.html">home</a></span>
+       			<span><a title="about" class="" href="/pages/about.html">about</a></span>
+		        <span><a title="guestbook" class="" href="/pages/guestbook.html">guestbook</a></span>
+			<span><a title="publication" class="" href="/pages/publication.html">publication</a></span>
+		        <span><a title="vitae" class="" href="/pages/vitae.html">vitae</a></span>
+		        <span><a title="categories" class="" href="/categories.html">categories</a></span>
+		        <span><a title="tags" class="" href="/tags.html">tags</a></span>
+		        <span><a title="links" class="" href="/pages/links">links</a></span>
+		        <span><a title="subscribe by RSS" class="" href="/feeds/all.atom.xml">subscribe</a></span>
+		</nav>
+		<artical class="content">
+<section class="post">
+<p>This a test for latex plugin of pelican</p>
+<p>now is an inline math equations $ y = x^2 $</p>
+<p>and a display math:</p>
+<div class="math">$$ y = x^2 $$</div>
+<p>and another type: </p>
+<div class="math">\begin{equation} y=x^2 \end{equation}</div>
+<div class="math">\begin{equation} \label{second} y=x^2 \end{equation}</div>
+<p>now ref to the second  as second $ \ref{second} $</p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>  
+</section> 
+<section class="meta">
+	<span class="auther"><a href="gepcel.github.io">WANG Aiyong</a></span>
+	<span class="time">/2014-01-10</span>
+	<br/>
+	<span class="license">Power by <a href="http://getpelican.com/">Pelican</a> in categories  <a href="/category/pelican.html">pelican</a> Tagged <a href="/tag/pelican.html">pelican </a><a href="/tag/pelican-plugins.html">pelican-plugins </a><a href="/tag/latex.html">latex </a><a href="/tag/mathjax.html">mathjax </a></span>
+</section><!-- /#meta -->
+<section class="comment">
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gepcel'; // required: replace example with your forum shortname
+    var disqus_url = 'gepcel.github.io/posts/posts/2014-01-10-test-pelican-plugins-mathjax.html';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+		</artical>
+	   </div>
+       </div>
+
+    </body>
+</html>
